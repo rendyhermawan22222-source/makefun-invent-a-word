@@ -1,0 +1,20 @@
+Build task: invent one brand-new English word for make.fun's "Invent a Word We Need"
+bounty and define it in a single clear line of at most 140 characters.
+
+The word must name something real that English has no word for — a small,
+everyday moment a reader recognises at once — and it must sound like English
+could have grown it: sayable, spellable, memorable, built from familiar roots.
+The definition must be exact and self-contained, landing in one reading, with
+its last clause carrying the turn.
+
+I brainstormed 16 candidate words and definitions (wave-back-at-the-wrong-person,
+rehearsing a phone call, the goodbye-then-same-direction walk, opening the fridge
+just to look, forgetting a name mid-conversation, tab hoarding, and more), checked
+the leading candidates against the web to make sure none already exists, and
+picked the strongest: "Wavemiss" — the wave you give a stranger who was waving
+at the person behind you. It is 76 characters, plain ASCII, one line, and the
+turn sits in the final clause.
+
+The entry program (main.py) writes that one line to /output/entry.txt, reads it
+back, and verifies it is exactly one line, 1-140 characters, non-blank ASCII.
+It is deterministic, uses no network and no randomness.

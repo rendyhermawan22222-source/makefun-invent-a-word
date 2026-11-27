@@ -37,6 +37,17 @@ def main() -> int:
         errors.append("entry is not exactly one line (%d lines)" % len(lines))
     if len(text) < 1 or len(text) > MAX_CHARS:
         errors.append("entry is %d chars, must be 1-%d" % (len(text), MAX_CHARS))
+    # Form check: "<Word>: <definition>".
+    if text.count(": ") != 1:
+        errors.append("entry must contain exactly one ': ' separator (found %d)" % text.count(": "))
+    else:
+        word, definition = text.split(": ", 1)
+        if not (word.isascii() and word.isalpha() and 3 <= len(word) <= 20 and word[0].isupper()):
+            errors.append("word %r must be one alphabetic token, 3-20 letters, starting with a capital" % word)
+        if not definition.strip():
+            errors.append("definition is empty")
+        elif not definition.endswith("."):
+            errors.append("definition must end with a period")
 
     if errors:
         print("FAIL: " + "; ".join(errors), file=sys.stderr)
